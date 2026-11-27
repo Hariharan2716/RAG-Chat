@@ -61,3 +61,13 @@ to Ollama at `localhost:11434`.
 
 This is a learning prototype, not a production security boundary. Keep Ollama and
 the machine itself secured, and review code before extending the tool allowlist.
+
+## Our development rule
+For every major component, follow:
+1. Understand the problem.
+2. Understand the architecture.
+3. Read the existing implementation.
+4. Make one change.
+5. Run it.
+6. Test it.
+7. Understand why it works.
