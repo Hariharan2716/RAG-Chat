@@ -11,6 +11,10 @@ from sentence_transformers import SentenceTransformer
 from groq import Groq
 
 
+try:
+    default_api_key = st.secrets.get("GROQ_API_KEY", "")
+except Exception:
+    default_api_key = ""
 # ==========================================
 # 1. PAGE CONFIGURATION
 # ==========================================
@@ -306,9 +310,10 @@ with st.sidebar:
     st.header("⚙️ Settings")
 
     api_key = st.text_input(
-        "Groq API Key",
-        type="password"
-    )
+    "Groq API Key",
+    type="password",
+    value=default_api_key
+)
 
     model_name = st.selectbox(
         "Choose LLM",
